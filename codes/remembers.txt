@@ -1,3 +1,6 @@
 Remember to cite nltk (natural language tool kit)
 Bird, Steven, Edward Loper and Ewan Klein (2009), Natural Language Processing with Python. O’Reilly Media Inc.
 https://www.nltk.org
+
+# nltk = natural language tool kit
+# re = regular expression operations 

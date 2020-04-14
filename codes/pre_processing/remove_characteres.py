@@ -1,7 +1,3 @@
-# https://www.nltk.org/index.html
-# nltk = natural language tool kit
-# re = regular expression operations 
-
 import json, re
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize 
