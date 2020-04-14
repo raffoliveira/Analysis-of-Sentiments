@@ -48,17 +48,12 @@ def remove_repeated_letters(text):
 
 # ------------------------------------------------------------------------------
 
-def remove_hashtag(text):
+def remove_hashtag_mentions(text):
 
-	word_tokens = word_tokenize(text)
+	text = re.sub(r'#\S+', '', text) 
+	text = re.sub(r'@\S+', '', text)
 
-	print(word_tokens)
-
-	for id_word in word_tokens:
-		if id_word[0] == '#':
-			word_tokens.remove(id_word)
-
-	return TreebankWordDetokenizer().detokenize(word_tokens)
+	return text
 
 # ------------------------------------------------------------------------------
 
@@ -85,18 +80,18 @@ def replace_stop_words(text):
 
 def main():
 
-	original_text = 'falaaaa aeeeee, blz? bom #dmaissss e  fldlfmlsdsaaaaaa ae mannnooooooo'
+	original_text = 'falaaaa aeeeee #falar, blz? bom #dmaissss e @fald na https://fdfjdo.vdo.com fldlfmlsdsaaaaaa ae mannnooooooo'
 	print('Original text: %s' % original_text)
 	new_text = original_text
 
-	# new_text = remove_URL(original_text)
+	new_text = remove_URL(original_text)
 	# new_text = new_text.lower()
 	# new_text = remove_numbers(new_text)
 	# new_text = replace_stop_words(new_text)
 	# new_text = remove_punctuation(new_text)
 	# new_text = TreebankWordDetokenizer().detokenize(new_text)
+	new_text = remove_hashtag_mentions(new_text)
 	new_text = remove_repeated_letters(new_text)
-	new_text = remove_hashtag(new_text)
 	# new_text = TreebankWordDetokenizer().detokenize(new_text)
 
 	print('\nProcessed text: %s' % new_text)
