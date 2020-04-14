@@ -87,6 +87,7 @@ def processing(profile_id):
 
 	destination_path = '/home/rafael/TCC_II/coleta_TCC_II/coletas'
 	months = ['agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+	# months = ['novembro', 'dezembro']
 	file_part1 = 'comments/comments_total.json'
 	file_part2 = 'comments/comments_total_processed.json'
 	
@@ -125,7 +126,7 @@ def main():
 
 	# for id_profile in profiles:
 
-	processing(profiles[1])
+	processing(profiles[0])
 
 
 
