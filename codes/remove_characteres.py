@@ -1,23 +1,18 @@
 # https://www.nltk.org/index.html
+# nltk = natural language tool kit
+# re = regular expression operations 
+
 import json, re
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize 
 from nltk.tokenize.treebank import TreebankWordDetokenizer
 
-# nltk = natural language tool kit
-# re = regular expression operations 
 
 # ------------------------------------------------------------------------------
 
 def remove_URL(text):
 
 	return re.sub(r'http\S+', '', text) #re.sub(pattern, repl, string)
-
-# ------------------------------------------------------------------------------
-
-def remove_simbols(text):
-
-	return re.sub(r'[^\w\s]','',text)
 
 # ------------------------------------------------------------------------------
 
@@ -57,42 +52,35 @@ def remove_hashtag_mentions(text):
 
 # ------------------------------------------------------------------------------
 
-def remove_punctuation(text):
+def remove_punctuation_symbols(text):
 
-	new_words = []
-	for word in text:
-		new_word = re.sub(r'[^\w\s]', '', word)
-		if new_word != '':
-			new_words.append(new_word)
-	return new_words
+	return re.sub(r'[^\w\s]', '', text)
 
 # ------------------------------------------------------------------------------
 
-def replace_stop_words(text):
+def remove_stop_words(text):
 		 
-	stop_words = set(stopwords.words('portuguese')) 	  
+	stop_words = set(stopwords.words('portuguese')) 
 	word_tokens = word_tokenize(text) 
 	filtered_sentence = [w for w in word_tokens if not w in stop_words] 
 
-	return filtered_sentence
+	return TreebankWordDetokenizer().detokenize(filtered_sentence)
 
 # ------------------------------------------------------------------------------
 
 def main():
 
-	original_text = 'falaaaa aeeeee #falar, blz? bom #dmaissss e @fald na https://fdfjdo.vdo.com fldlfmlsdsaaaaaa ae mannnooooooo'
+	original_text = 'Falaaaa a porque aeeeee #falar, b4lz? bom #dmaissss esta vaca e @fald na https://fdfjdo.vdo.com fldlfmlsdsaaaaaa ae mannnooooooo'
 	print('Original text: %s' % original_text)
 	new_text = original_text
 
-	new_text = remove_URL(original_text)
-	# new_text = new_text.lower()
-	# new_text = remove_numbers(new_text)
-	# new_text = replace_stop_words(new_text)
-	# new_text = remove_punctuation(new_text)
-	# new_text = TreebankWordDetokenizer().detokenize(new_text)
+	new_text = new_text.lower()
 	new_text = remove_hashtag_mentions(new_text)
+	new_text = remove_URL(original_text)
+	new_text = remove_numbers(new_text)
+	new_text = remove_punctuation_symbols(new_text)
+	new_text = remove_stop_words(new_text)		
 	new_text = remove_repeated_letters(new_text)
-	# new_text = TreebankWordDetokenizer().detokenize(new_text)
 
 	print('\nProcessed text: %s' % new_text)
 
