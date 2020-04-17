@@ -124,9 +124,9 @@ def main():
 	
 	profiles = ['bolsonaro', 'haddad']	
 
-	# for id_profile in profiles:
+	for id_profile in profiles:
 
-	processing(profiles[0])
+		processing(profiles[0])
 
 
 
