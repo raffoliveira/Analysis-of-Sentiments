@@ -70,7 +70,7 @@ def pre_processing(text):
 	text = remove_URL(text)
 	text = remove_numbers(text)
 	text = remove_punctuation_symbols(text)
-	text = remove_stop_words(text)		
+	# text = remove_stop_words(text)		
 	text = remove_repeated_letters(text)
 
 	return text
@@ -85,11 +85,10 @@ def writeInFile(file, content):
 
 def processing(profile_id):
 
-	destination_path = '/home/rafael/TCC_II/coleta_TCC_II/coletas'
+	destination_path = r'/home/rafael/TCC_II/coleta_TCC_II/coletas'
 	months = ['agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
-	# months = ['novembro', 'dezembro']
-	file_part1 = 'comments/comments_total.json'
-	file_part2 = 'comments/comments_total_processed.json'
+	file_part1 = r'comments/comments_total.json'
+	file_part2 = r'comments/comments_total_processed_with_stop_words.json'
 	
 	for id_months in months:
 		file_read = open('%s/%s/%s/%s' % (destination_path, profile_id, id_months, file_part1),'rt')
@@ -126,7 +125,7 @@ def main():
 
 	for id_profile in profiles:
 
-		processing(profiles[0])
+		processing(id_profile)
 
 if __name__ == '__main__':
 	main()
