@@ -2,8 +2,8 @@ import json
 from sentistrength import PySentiStr
 
 senti = PySentiStr()
-senti.setSentiStrengthPath(r'/home/rafael/TCC_II/coleta_TCC_II/codes/sentistrength/SentiStrength.jar')
-senti.setSentiStrengthLanguageFolderPath(r'/home/rafael/TCC_II/coleta_TCC_II/codes/sentistrength/SentiStrength_Data/')
+senti.setSentiStrengthPath('/home/rafael/TCC_II/coleta_TCC_II/codes/sentistrength/SentiStrength.jar')
+senti.setSentiStrengthLanguageFolderPath('/home/rafael/TCC_II/coleta_TCC_II/codes/sentistrength/SentiStrength_Data/')
 
 # ------------------------------------------------------------------------------
 
@@ -15,21 +15,28 @@ def writeInFile(file, content):
 
 def processing_Sentiment(message):
 
+	print(f'THE MESSAGE IS: {message}')
+
 	scores = ['dual', 'binary', 'trinary', 'scale']
 	text_sentiments = {}
 
-	for id_scores in scores:
+	if message != '':
 
-		result_sentiment = senti.getSentiment(message, score = id_scores)
-		text_sentiments.update({id_scores: result_sentiment})
+		for id_scores in scores:
 
-	return text_sentiments
+			result_sentiment = senti.getSentiment(message, score = id_scores)
+			text_sentiments.update({id_scores: result_sentiment})
+
+		return text_sentiments
+	else:
+
+		return text_sentiments
 
 # ------------------------------------------------------------------------------
 
 def analysing_Sentiments(profile_id):
 
-	destination_path = r'/home/rafael/TCC_II/coleta_TCC_II/coletas'
+	destination_path = '/home/rafael/TCC_II/coleta_TCC_II/coletas'
 	months = ['agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
 	file_part = ['comments_total', 'comments_total_processed_with_stop_words', \
 				'comments_total_processed_without_stop_words']
