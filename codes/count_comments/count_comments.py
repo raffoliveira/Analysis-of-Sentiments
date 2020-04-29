@@ -23,11 +23,11 @@ def count_Comments(profile_id):
 			comments_total = json.loads(line)['comments']
 
 			#{'id_post': number_comments}
-			content = {'id_post': len(comments_total)}
-			counter_comments.append(content)
+			content = {id_post: len(comments_total)}
+			counter_comments.update(content)
 			writeInFile(file_write, content)
 
-		final_line = 'The total of comments in {id_months} is {sum(counter_comments.values())}'
+		final_line = 'The total of comments in {} is {}'.format(id_months, sum(counter_comments.values()))
 		writeInFile(file_write, final_line)
 		file_read.close()
 		file_write.close()
