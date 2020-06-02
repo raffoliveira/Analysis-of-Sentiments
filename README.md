@@ -1,4 +1,4 @@
-# Análise de sentimentos em rede sociais 
+# ANÁLISE DE SENTIMENTOS EM REDES SOCIAIS
 
 Este trabalho refere-se ao meu Trabalho de Conclusão de Curso no curso de Engenharia de Computaração na Universidade Federal de Ouro Preto denominado de **"Análise da escalada de ódio no período eleitoral de 2018"**.
 
