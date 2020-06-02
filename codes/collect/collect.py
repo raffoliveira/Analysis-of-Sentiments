@@ -5,6 +5,7 @@ from time import sleep, strftime
 from datetime import datetime
 from facebookads.exceptions import FacebookError
 from requests.exceptions import HTTPError
+from string import punctuation
 
 token = 'EAAbPAyrnxo0BABIJEQDEostbMXrSbsCpdpKCg79JZC0XhWBNZAcaHEGNLmAoLasK6LcCWopsvjwVX794A7wZApm6ycNBNwxTlTJZB22QBNWn6VW1f7nDZBP5wQJ4EhbMY6S4lPDQ3K15ahBDbcwzuu9JBrbdPf1g6Dvw8RU49FgZDZD'
 
@@ -133,6 +134,7 @@ def getPublicCommentsFromID(facebook_id, exception_log):
 	count_error = 0
 	time_sleep = 0
 	timer_paging = 0
+	count_total_requests = 0
 	
 	d_begin = 1
 	d_end = 2
@@ -187,6 +189,7 @@ def getPublicCommentsFromID(facebook_id, exception_log):
 								except FacebookError as error:
 
 									count_error += 1
+									count_total_requests += 1
 									
 									try:
 										exception_log.write('<<<<<<<< Exception in comments>>>>>>>>>\n')
@@ -238,8 +241,8 @@ def getPublicCommentsFromID(facebook_id, exception_log):
 
 									count_error += 1
 									time_sleep = (10 * 60) * count_error
-									exception_log.write('\n70% Rate Limit Reached. Cooling Time %.2lf minutes' % (float(time_sleep)/60))
-									logging.debug('\n70% Rate Limit Reached. Cooling Time 10 Minutes.')
+									exception_log.write('\n70 percent Rate Limit Reached. Cooling Time %.2lf minutes' % (float(time_sleep)/60))
+									logging.debug('\n70 percent Rate Limit Reached. Cooling Time 10 Minutes.')
 									sleep(time_sleep)
 
 								if 'WWW-Authenticate' in checkCommentsPosts.headers:
@@ -274,6 +277,7 @@ def pagingPosts(required_posts, collected_posts, file_all_posts, file_ids_posts,
 
 	count_error = 0
 	time_sleep = 0
+	count_total_requests = 0
 
 	while(True):
 
@@ -304,6 +308,7 @@ def pagingPosts(required_posts, collected_posts, file_all_posts, file_ids_posts,
 					except FacebookError as error:
 
 						count_error += 1
+						count_total_requests += 1
 						
 						try:
 							log_file.write('<<<<<<<< Exception in comments>>>>>>>>>\n')
@@ -355,8 +360,8 @@ def pagingPosts(required_posts, collected_posts, file_all_posts, file_ids_posts,
 
 						count_error += 1
 						time_sleep = (5 * 60) * count_error
-						log_file.write('\n70% Rate Limit Reached. Cooling Time %.2lf minutes' % (float(time_sleep)/60))
-						logging.debug('\n70% Rate Limit Reached. Cooling Time 10 Minutes.')
+						log_file.write("\n70 percent Rate Limit Reached. Cooling Time %.2lf minutes" % (float(time_sleep)/60))
+						logging.debug('\n70 percent Rate Limit Reached. Cooling Time 10 Minutes.')
 						sleep(time_sleep)			
 					
 				else:

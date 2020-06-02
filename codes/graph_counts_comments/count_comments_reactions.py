@@ -123,14 +123,7 @@ def main():
     plt.title('Distribuição de reactions')
 
     # Show graphic
-    plt.show()
-
-
-
-
-
-
-    
+    plt.show()   
 
 if __name__ == "__main__":
     main()

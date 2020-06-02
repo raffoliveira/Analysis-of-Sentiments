@@ -1,8 +1,6 @@
-import time, gzip, json, requests, facebook, logging
+import time, gzip, json
 from time import sleep, strftime
 from datetime import datetime
-from facebookads.exceptions import FacebookError
-from requests.exceptions import HTTPError
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
