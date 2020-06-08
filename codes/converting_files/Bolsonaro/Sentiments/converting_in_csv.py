@@ -15,9 +15,13 @@ def converting_files(profile_id):
     for j, id_path_file in enumerate(path_file):
 
         file_w = '%s.csv' % (id_path_file)
-        data_comments = [['ID_post', 'Created_time', 'ID_comment', 'Message', 'Replies_count', 'Sentiment_dial',
-                          'Sentiment_binary', 'Sentimental_trinary', 'Sentiment_scale']]
-    
+
+        if j%2 != 0:
+            data_comments = [['ID_post', 'Created_time', 'ID_comment', 'Message', 'Replies_count', 'Sentiment_dial',
+                            'Sentiment_binary', 'Sentimental_trinary', 'Sentiment_scale']]
+        else: 
+            data_comments = [['ID_post', 'Created_time', 'ID_comment', 'Message', 'Replies_count']]   
+            
         for id_months in months:           
 
             file_r = '%s/%s/%s/%s.json' % (destination_path, profile_id, id_months, id_path_file)           
