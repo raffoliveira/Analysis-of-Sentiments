@@ -6,7 +6,7 @@ def convertDateInUnixTimeStamp(stime):
 	return '%s' % (datetime.strptime(stime, "%Y-%m-%dT%H:%M:%S+0000").timestamp())
 
 #--------------------------------------------------------------------------------------
-def converting_likes(profile_id):
+def converting_files(profile_id):
 
 	destination_path = '/home/rafael/TCC_II/coleta_TCC_II/coletas'
 	months = ['agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
@@ -52,7 +52,7 @@ def converting_likes(profile_id):
 def main():
 
 	profiles = ['bolsonaro', 'haddad']	
-	converting_likes(profiles[0])
+	converting_files(profiles[0])
 
 if __name__ == '__main__':
 	main()
