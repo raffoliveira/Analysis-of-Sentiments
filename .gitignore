@@ -14,3 +14,4 @@ SentiStrength.jar
 /codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_todos.txt
 *.csv
 *.tsv
+.ipynb_checkpoints
