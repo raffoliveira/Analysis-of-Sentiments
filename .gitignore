@@ -1,17 +1,17 @@
 /coletas
 SentiStrength.jar
-/codes/converting_files/bolsonaro/Word_cloud/Generating_texts/text_word_cloud_agosto.txt
-/codes/converting_files/bolsonaro/Word_cloud/Generating_texts/text_word_cloud_setembro.txt
-/codes/converting_files/bolsonaro/Word_cloud/Generating_texts/text_word_cloud_outubro.txt
-/codes/converting_files/bolsonaro/Word_cloud/Generating_texts/text_word_cloud_novembro.txt
-/codes/converting_files/bolsonaro/Word_cloud/Generating_texts/text_word_cloud_dezembro.txt
-/codes/converting_files/bolsonaro/Word_cloud/Generating_texts/text_word_cloud_todos.txt
-/codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_agosto.txt
-/codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_setembro.txt
-/codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_outubro.txt
-/codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_novembro.txt
-/codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_dezembro.txt
-/codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_todos.txt
+text_word_cloud_agosto.txt
+text_word_cloud_setembro.txt
+text_word_cloud_outubro.txt
+text_word_cloud_novembro.txt
+text_word_cloud_dezembro.txt
+text_word_cloud_todos.txt
+# /codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_agosto.txt
+# /codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_setembro.txt
+# /codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_outubro.txt
+# /codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_novembro.txt
+# /codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_dezembro.txt
+# /codes/converting_files/haddad/Word_cloud/Generating_texts/text_word_cloud_todos.txt
 *.csv
 *.tsv
 .ipynb_checkpoints

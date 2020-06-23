@@ -17,7 +17,7 @@ def converting_files(profile_id):
         file_w = '%s.csv' % (id_path_file)
 
         if j%2 != 0:
-            data_comments = [['ID_post', 'Created_time', 'ID_comment', 'Message', 'Replies_count', 'Sentiment_dial',
+            data_comments = [['ID_post', 'Created_time', 'ID_comment', 'Message', 'Replies_count', 'Sentiment_dual',
                             'Sentiment_binary', 'Sentimental_trinary', 'Sentiment_scale']]
         else: 
             data_comments = [['ID_post', 'Created_time', 'ID_comment', 'Message', 'Replies_count']]   
