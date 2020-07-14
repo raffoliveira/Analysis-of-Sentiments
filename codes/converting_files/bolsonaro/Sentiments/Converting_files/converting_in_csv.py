@@ -1,4 +1,5 @@
 import csv, json
+from datetime import datetime
 
 #--------------------------------------------------------------------------------------
 def converting_files(profile_id):
@@ -17,10 +18,12 @@ def converting_files(profile_id):
         file_w = '%s.csv' % (id_path_file)
 
         if j%2 != 0:
-            data_comments = [['ID_post', 'Created_time', 'ID_comment', 'Message', 'Replies_count', 'Sentiment_dual',
-                            'Sentiment_binary', 'Sentimental_trinary', 'Sentiment_scale']]
+            data_comments = [['ID_post', 'Created_time', 'Day', 'Month', 'Year', 'Hour', 'Minute', 'Seconds',
+                              'ID_comment', 'Message', 'Replies_count', 'Sentiment_dual',
+                              'Sentiment_binary', 'Sentimental_trinary', 'Sentiment_scale']]
         else: 
-            data_comments = [['ID_post', 'Created_time', 'ID_comment', 'Message', 'Replies_count']]   
+            data_comments = [['ID_post', 'Created_time', 'Day', 'Month', 'Year', 'Hour', 'Minute', 'Seconds',
+                              'ID_comment', 'Message', 'Replies_count']]   
             
         for id_months in months:           
 
@@ -38,6 +41,13 @@ def converting_files(profile_id):
                         for id_comments in list_of_comments:
 
                             created_time = id_comments['created_time']
+                            date = datetime.strptime(created_time, '%Y-%m-%dT%H:%M:%S+0000')
+                            day = date.day
+                            month = date.month
+                            year = date.year
+                            hour = date.hour
+                            minute = date.minute
+                            second = date.second
                             id_comment = id_comments['id']
                             message = id_comments['message']
                             replies_count = id_comments['comment_count']
@@ -54,18 +64,27 @@ def converting_files(profile_id):
                                 sentiment_trinary = 0
                                 sentiment_scale = 0
 
-                            data_comments.append([id_post, created_time, id_comment, message, replies_count, sentiment_dual,
-                                                sentiment_binary, sentiment_trinary, sentiment_scale])
+                            data_comments.append([id_post, created_time, day, month, year, hour, minute, second,
+                                                  id_comment, message, replies_count, sentiment_dual,
+                                                  sentiment_binary, sentiment_trinary, sentiment_scale])
                     else:
 
                         for id_comments in list_of_comments:
                             
                             created_time = id_comments['created_time']
+                            date = datetime.strptime(created_time, '%Y-%m-%dT%H:%M:%S+0000')
+                            day = date.day
+                            month = date.month
+                            year = date.year
+                            hour = date.hour
+                            minute = date.minute
+                            second = date.second
                             id_comment = id_comments['id']
                             message = id_comments['message']
                             replies_count = id_comments['comment_count']
                    
-                            data_comments.append([id_post, created_time, id_comment, message, replies_count])
+                            data_comments.append([id_post, created_time, day, month, year, hour, minute, second,
+                                                  id_comment, message, replies_count])
 
         with open(file_w, 'w') as file_write:
             writer = csv.writer(file_write, delimiter = '\t')

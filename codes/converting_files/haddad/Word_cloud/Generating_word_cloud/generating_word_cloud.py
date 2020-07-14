@@ -26,8 +26,8 @@ def generating_word_cloud(profile_id):
             plt.imshow(word_cloud, interpolation='bilinear')
             plt.title('Nuvem de palavra do mês de %s' % (id_months))
             plt.axis('off')
-            plt.show()
-            
+            plt.savefig('todos.png', dpi = 300)
+            # plt.show()           
 
 #--------------------------------------------------------------------------------------
 def main():
