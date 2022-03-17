@@ -1,11 +1,11 @@
-# ANÁLISE DE SENTIMENTOS EM REDES SOCIAIS
+# SENTIMENTS ANALYSIS ON SOCIAL MEDIA
 
-Este trabalho refere-se ao meu Trabalho de Conclusão de Curso no curso de Engenharia de Computação na Universidade Federal de Ouro Preto denominado de **"Análise da escalada de ódio no período eleitoral de 2018"**.
+This work is related my final work on Computer Engineering course at Federal University of Ouro Preto. The title is **"Analysis of the hate progress in the 2018 election period"**.
 
-Neste trabalho tento descobrir se há alguma correlação entre o discurso de ódio e o resultado das eleições do ano citado, ou seja, se o resultado eleitoral influenciou no comportamento dos usuários na rede social Facebook. 
+The goal is to found out if there is some correlation between the hate speech and the 2018 electoral results, i.e., if the electoral results influenced the behaviour users on the social media Facebook.
 
-As ferramentas utilizadas foram:
+Tools:
 
 + **Python3**
-+ Bibliotecas: **Numpy**, **Matplotlib**, **Seaborn**, **Pandas**, **NLTK**
-+ Algoritmo **SentiStrength** para análise de sentimentos
++ Packages: **Numpy**, **Matplotlib**, **Seaborn**, **Pandas**, **NLTK**
++ Algorithm **SentiStrength** to sentiments analysis
