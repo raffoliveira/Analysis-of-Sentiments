@@ -8,4 +8,4 @@ Tools:
 
 + **Python3**
 + Packages: **Numpy**, **Matplotlib**, **Seaborn**, **Pandas**, **NLTK**
-+ Algorithm **SentiStrength** to sentiments analysis
++ Algorithm **SentiStrength** to analyse text sentiments
